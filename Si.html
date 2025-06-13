@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Te quiero Virginia 😘</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffc0cb;
+      overflow-x: hidden;
+      text-align: center;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 1.5rem;
+      color: #d62828;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    .fotos {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .fotos img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease;
+    }
+
+    .video-container {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .fotos img:hover,
+    .video-container:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      font-size: 1.4em;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .heart {
+      position: fixed;
+      top: -50px;
+      color: #ff69b4;
+      font-size: 20px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+        margin-bottom: 1rem;
+      }
+
+      .fotos {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .fotos img,
+      .video-container {
+        width: 90vw;
+        max-height: 300px;
+        height: auto;
+        border-radius: 15px;
+      }
+
+      .video-container video {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      p {
+        font-size: 1.1em;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Gracias por decir sí, te amo demasiado hermosa 💖</h1>
+
+  <div class="fotos">
+    <img src="img/1.jfif" alt="Foto 1" />
+    <div class="video-container">
+      <video src="img/4.mp4" autoplay muted loop playsinline></video>
+    </div>
+    <img src="img/3.jfif" alt="Foto 3" />
+  </div>
+
+  <p>
+    Cuando te vi por primera vez, les dije a mis amigos: “¿Quién es ella?” Te veías súper hermosa. Eso fue en el vivero, y hasta el día de hoy no hay otra cosa que venga a mi mente más que tú. Me levanto pensando en ti y me duermo pensando en ti. No puedo dejar de pensarte; me tienes completamente enamorado.
+    Sé que no soy la gran cosa, que me equivoco mucho, pero créeme, nunca es mi intención hacerte sentir mal. Mi única intención es que seas feliz… y mucho mejor si es a mi lado, porque te amo y no pienso dejar de hacerlo.
+  </p>
+
+  <script>
+    function crearCorazon() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      heart.innerText = "❤️";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(crearCorazon, 300);
+  </script>
+</body>
+</html>
